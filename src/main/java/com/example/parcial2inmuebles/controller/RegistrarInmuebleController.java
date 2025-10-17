@@ -66,29 +66,29 @@ public class RegistrarInmuebleController {
 
 
 
-            Iinmueble inmueble = dbFacade.crearInmueble(tipoCasa, habitaciones, ciudad, cantidadPisos, precio);
+            Iinmueble inmuebleBase = dbFacade.crearInmueble(tipoCasa, habitaciones, ciudad, cantidadPisos, precio);
 
+            Iinmueble inmuebleDecorado;
             switch (tipoCasa) {
                 case "Casa":
-                    CasaDecorator casaInmueble = new CasaDecorator(new InmuebleDecorator() {
-                    });
+                    inmuebleDecorado = new CasaDecorator(inmuebleBase);
                     break;
                 case "Finca":
-                    FincaDecorator fincaInmueble = new FincaDecorator(new InmuebleDecorator() {
-                    });
+                    inmuebleDecorado = new FincaDecorator(inmuebleBase);
                     break;
                 case "Apartamento":
-                    ApartamentoDecorator ApartamentoInmueble = new ApartamentoDecorator(new InmuebleDecorator() {
-                    });
+                    inmuebleDecorado = new ApartamentoDecorator(inmuebleBase);
                     break;
                 case "Local":
-                    LocalDecorator localInmueble = new LocalDecorator(new InmuebleDecorator() {
-                    });
+                    inmuebleDecorado = new LocalDecorator(inmuebleBase);
                     break;
                 default:
-                    System.out.println("Tipo de inmueble no válido");
-                    break;
+                    mostrarMensaje("Error", "Tipo de inmueble no válido", Alert.AlertType.ERROR);
+                    return;
             }
+
+
+            dbFacade.getListainmuebles().add(inmuebleDecorado);
 
             mostrarMensaje("Éxito", "Se ha registrado correctamente", Alert.AlertType.INFORMATION);
             limpiarCompletarRegistro();
@@ -100,11 +100,7 @@ public class RegistrarInmuebleController {
 
     @FXML
     void limpiarCampos(ActionEvent event) {
-        comboTipoCasa.getSelectionModel().clearSelection();
-        txtPisos.clear();
-        txtHabitaciones.clear();
-        txtCiudad.clear();
-        txtPrecio.clear();
+        limpiarCompletarRegistro();
     }
 
     private void mostrarMensaje(String titulo, String mensaje, Alert.AlertType tipo) {

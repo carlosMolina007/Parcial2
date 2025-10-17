@@ -43,7 +43,7 @@
                   <Insets left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
                <children>
-                  <Label alignment="TOP_LEFT" text="Tipo Casa:" textFill="#2e2e2e" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                  <Label alignment="TOP_LEFT" text="Tipo de inmueble:" textFill="#2e2e2e" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Italic" size="20.0" />
                      </font>
@@ -69,7 +69,7 @@
                         <Font name="System Italic" size="20.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="comboTipoCasa" prefWidth="150.0" promptText="Seleccione el tipo de casa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="comboTipoCasa" prefWidth="150.0" promptText="Seleccione el tipo de inmueble" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="txtHabitaciones" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="txtPisos" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <TextField fx:id="txtPrecio" GridPane.columnIndex="1" GridPane.rowIndex="5" />

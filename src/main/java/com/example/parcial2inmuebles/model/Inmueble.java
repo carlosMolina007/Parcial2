@@ -34,22 +34,6 @@ public class Inmueble implements Iinmueble {
         return precio;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public void setHabitaciones(int habitaciones) {
-        this.habitaciones = habitaciones;
-    }
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-    public void setCantidadPisos(int cantidadPisos) {
-        this.cantidadPisos = cantidadPisos;
-    }
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
     public static  class Builder{
         private String tipo;
         private int habitaciones;
@@ -81,8 +65,8 @@ public class Inmueble implements Iinmueble {
     }
 
     @Override
-    public double getimpuestoInmueble(){
-        return precio;
+    public double getImpuesto(){
+        return precio * 0.08;
     }
 
 

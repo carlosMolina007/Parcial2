@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class listadoInmuebleController {
 
@@ -41,8 +42,23 @@ public class listadoInmuebleController {
     @FXML
     private TableColumn<Iinmueble, Double> colImpuesto;
 
-    private final ObservableList<Iinmueble> listaMotos = FXCollections.observableArrayList();
+    private final ObservableList<Iinmueble> listaInmuebles = FXCollections.observableArrayList();
     private final DataBaseFacade dbFacade = new DataBaseFacade();
+
+
+    @FXML
+    public void initialize() {
+        colCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
+        colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        colPisos.setCellValueFactory(new PropertyValueFactory<>("cantidadPisos"));
+        colHabitaciones.setCellValueFactory(new PropertyValueFactory<>("habitaciones"));
+        colImpuesto.setCellValueFactory(new PropertyValueFactory<>("impuesto"));
+
+        tablaInmuebles.setItems(listaInmuebles);
+        cargarInmuebles();
+    }
+
 
     @FXML
     void deseleccionar(ActionEvent event) {
@@ -63,7 +79,7 @@ public class listadoInmuebleController {
     }
 
     private void cargarInmuebles() {
-        listaMotos.setAll(dbFacade.getListainmuebles());
+        listaInmuebles.setAll(dbFacade.getDb().getListaInmuebles());
     }
 
     private void mostrarAlerta(String mensaje) {

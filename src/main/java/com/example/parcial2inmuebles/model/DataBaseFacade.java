@@ -14,7 +14,7 @@ public class DataBaseFacade {
         db = DataBase.getInstance();
     }
 
-    public Inmueble crearInmueble(String tipo, int habitaciones, String ciudad, int cantidadPisos, double precios) {
+    public Iinmueble crearInmueble(String tipo, int habitaciones, String ciudad, int cantidadPisos, double precios) {
         Inmueble inmueble =new Inmueble
                 .Builder()
                 .tipo(tipo)
@@ -28,7 +28,7 @@ public class DataBaseFacade {
     }
 
 
-    public List<Inmueble> getListainmuebles() {
+    public List<Iinmueble> getListainmuebles() {
         return db.getListaInmuebles();
     }
 

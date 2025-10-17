@@ -2,7 +2,7 @@ package com.example.parcial2inmuebles.model;
 
 public interface Iinmueble {
 
-    double getimpuestoInmueble();
+    double getImpuesto();
     String getTipo();
     int getHabitaciones();
     String getCiudad();

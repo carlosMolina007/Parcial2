@@ -2,13 +2,12 @@ package com.example.parcial2inmuebles.model;
 
 public class LocalDecorator extends InmuebleDecorator implements Iinmueble {
 
-    protected Iinmueble inmuebleDecorado;
 
     public LocalDecorator(Iinmueble inmueble) {
         super(inmueble);
     }
     @Override
-    public double getimpuestoInmueble(){
+    public double getImpuesto(){
         double impuesto = getPrecio() * 0.2;
         return impuesto;
     }

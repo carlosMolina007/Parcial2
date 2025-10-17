@@ -1,42 +1,38 @@
 package com.example.parcial2inmuebles.model;
 
 public abstract class InmuebleDecorator implements Iinmueble {
-    protected  Iinmueble inmueble;
 
-    public  InmuebleDecorator(Iinmueble inmueble) { this.inmueble = inmueble; }
+    protected Iinmueble inmuebleDecorado;
 
-    protected InmuebleDecorator() {
-    }
+    public  InmuebleDecorator(Iinmueble inmueble) { this.inmuebleDecorado = inmueble; }
 
     @Override
-    public double getimpuestoInmueble() {
-        return inmueble.getimpuestoInmueble();
+    public double getImpuesto() {
+        return inmuebleDecorado.getImpuesto();
     }
 
     @Override
     public  String getTipo(){
-        return inmueble.getTipo();
+        return inmuebleDecorado.getTipo();
     }
 
     @Override
     public int getHabitaciones(){
-        return inmueble.getHabitaciones();
+        return inmuebleDecorado.getHabitaciones();
     }
     @Override
     public String getCiudad(){
-        return  inmueble.getCiudad();
+        return  inmuebleDecorado.getCiudad();
     }
 
     @Override
     public int getCantidadPisos(){
-        return inmueble.getCantidadPisos();
+        return inmuebleDecorado.getCantidadPisos();
     }
 
     @Override
     public double getPrecio(){
-        return  inmueble.getPrecio();
+        return  inmuebleDecorado.getPrecio();
     }
-
-
 
 }
