@@ -50,10 +50,37 @@ public class listadoInmuebleController {
     public void initialize() {
         colCiudad.setCellValueFactory(new PropertyValueFactory<>("ciudad"));
         colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
         colPisos.setCellValueFactory(new PropertyValueFactory<>("cantidadPisos"));
         colHabitaciones.setCellValueFactory(new PropertyValueFactory<>("habitaciones"));
+        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
         colImpuesto.setCellValueFactory(new PropertyValueFactory<>("impuesto"));
+
+        java.text.NumberFormat formatoCOP = java.text.NumberFormat.getCurrencyInstance(new java.util.Locale("es", "CO"));
+        formatoCOP.setMaximumFractionDigits(2);
+
+        colPrecio.setCellFactory(column -> new javafx.scene.control.TableCell<Iinmueble, Double>() {
+            @Override
+            protected void updateItem(Double value, boolean empty) {
+                super.updateItem(value, empty);
+                if (empty || value == null) {
+                    setText(null);
+                } else {
+                    setText("COP " + formatoCOP.format(value).replace("$", "").trim());
+                }
+            }
+        });
+
+        colImpuesto.setCellFactory(column -> new javafx.scene.control.TableCell<>() {
+            @Override
+            protected void updateItem(Double value, boolean empty) {
+                super.updateItem(value, empty);
+                if (empty || value == null) {
+                    setText(null);
+                } else {
+                    setText("COP " + formatoCOP.format(value).replace("$", "").trim());
+                }
+            }
+        });
 
         tablaInmuebles.setItems(listaInmuebles);
         cargarInmuebles();
@@ -68,9 +95,8 @@ public class listadoInmuebleController {
     @FXML
     void eliminar(ActionEvent event) {
         Iinmueble seleccionada = tablaInmuebles.getSelectionModel().getSelectedItem();
-
         if (seleccionada != null) {
-            dbFacade.eliminarInmueble((Inmueble) seleccionada);
+            dbFacade.eliminarInmueble(seleccionada);
             cargarInmuebles();
             mostrarAlerta("Se ha eliminado correctamente.");
         } else {

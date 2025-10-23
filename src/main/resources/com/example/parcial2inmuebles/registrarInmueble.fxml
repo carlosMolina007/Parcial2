@@ -19,7 +19,7 @@
          <children>
             <AnchorPane prefHeight="54.0" prefWidth="560.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #F4F4F6;" text="Registro de motocicletas" textFill="#2e2e2e" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #F4F4F6;" text="Registro de inmuebles" textFill="#2e2e2e" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="System Bold" size="34.0" />
                      </font>

@@ -9,7 +9,7 @@ public class CasaDecorator extends InmuebleDecorator{
 
     @Override
     public double getImpuesto(){
-        double impuesto = getPrecio() * 0.1;
+        double impuesto = getPrecio() * 0.05;
         return impuesto;
     }
 

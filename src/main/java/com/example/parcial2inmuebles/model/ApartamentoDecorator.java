@@ -8,7 +8,7 @@ public class ApartamentoDecorator extends InmuebleDecorator{
     }
     @Override
     public double getImpuesto(){
-        double impuesto = getPrecio() * 0.15;
+        double impuesto = getPrecio() * 0.08;
         return impuesto;
     }
     @Override

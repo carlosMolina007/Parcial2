@@ -8,7 +8,7 @@ public class LocalDecorator extends InmuebleDecorator implements Iinmueble {
     }
     @Override
     public double getImpuesto(){
-        double impuesto = getPrecio() * 0.2;
+        double impuesto = getPrecio() * 0.095;
         return impuesto;
     }
     @Override

@@ -28,7 +28,7 @@ public class DataBase {
         return db;
     }
 
-    public void eliminarInmueble(Inmueble inmueble) {
+    public void eliminarInmueble(Iinmueble inmueble) {
         listaInmuebles.remove(inmueble);
     }
 

@@ -32,7 +32,7 @@ public class DataBaseFacade {
         return db.getListaInmuebles();
     }
 
-    public void eliminarInmueble(Inmueble inmueble) {
+    public void eliminarInmueble(Iinmueble inmueble) {
         db.eliminarInmueble(inmueble);
     }
 
